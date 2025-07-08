@@ -5,12 +5,19 @@ def find_match_index(pos, possible_moves):
 
 # Auto-walk using Dijkstra Algorithm
 map = [
-    [' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', '#', '#', ' '],
-    [' ', '#', ' ', '#', ' '],
-    [' ', ' ', ' ', '#', ' '],
+    ['*', '*', '*', '*', '*'],
+    ['*', '*', '*', '*', '*'],
+    ['*', '*', '#', '#', '*'],
+    ['*', '#', '*', '#', '*'],
+    ['*', '*', '*', '#', '*'],
 ]
+
+print('map:')
+for row in map:
+    for col in row:
+        print(col, end=' ')
+    print()
+print()
 
 # Translate map to graph
 map_size_x = len(map[0])
@@ -100,8 +107,12 @@ new_map = map.copy()
 for walkPos in path:
     new_map[walkPos[0]][walkPos[1]] = 'o'
 
-print('distances: ')
-print(distances)
-
 print('walking path:')
-print(new_map)
+for row in new_map:
+    for col in row:
+        print(col, end=' ')
+    print()
+print()
+
+# print('distances: ')
+# print(distances)
